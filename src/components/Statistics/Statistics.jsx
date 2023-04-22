@@ -9,7 +9,6 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      {/* Генеруємо масив з елементів <p></p> для кожного елемента статистики з масиву options */}
       {options.map((name, i) => {
         return (
           // назва елемента статистики
