@@ -10,9 +10,9 @@ export const Statistics = ({
 }) =>
   <section className={css.statistic}>
               <ul className={css.list}>
-                  <li className={css.numbers}>good: {good}</li>
-                  <li className={css.numbers}>neutral: {neutral}</li>
-                  <li className={css.numbers}>bad: {bad}</li>
+                  <li className={css.good}>good: {good}</li>
+                  <li className={css.neutral}>neutral: {neutral}</li>
+                  <li className={css.bad}>bad: {bad}</li>
                   <li className={css.numbers}>total: {total}</li>
                   <li className={css.numbers}>positive feedback: {positivePercentage} % </li>
               </ul>
