@@ -2,35 +2,24 @@ import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 
 export const Statistics = ({
-  options, 
-  statistic, 
+  good,
+  neutral, 
+  bad, 
   total, 
   positivePercentage, 
-}) => {
-  return (
-    <>
-      {options.map((name, i) => {
-        return (
-          // назва елемента статистики
-          <p key={i} className={css[name]}>
-            {name}:{/* значення з statistic */}
-            <span className={css.numbers}>{statistic[name]}</span>
-          </p>
-        );
-      })}
-      <p>
-        Total: <span className={css.numbers}>{total}</span>
-      </p>
-      <p className={css.good}>
-        Positive feedback:{' '}
-        <span className={css.numbers}>{positivePercentage()}</span>%
-      </p>
-    </>
-  );
-};
+}) =>
+  <section className={css.statistic}>
+              <ul className={css.list}>
+                  <li className={css.numbers}>good: {good}</li>
+                  <li className={css.numbers}>neutral: {neutral}</li>
+                  <li className={css.numbers}>bad: {bad}</li>
+                  <li className={css.numbers}>total: {total}</li>
+                  <li className={css.numbers}>positive feedback: {positivePercentage} % </li>
+              </ul>
+              </section>
 
 Statistics.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])) 
+  options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad']))
     .isRequired,
   statistic: PropTypes.shape({
     good: PropTypes.number.isRequired,
